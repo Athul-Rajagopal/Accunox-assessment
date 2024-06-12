@@ -23,7 +23,7 @@ Follow these steps to set up and run the project on your local machine.
 
 ```bash
 git clone https://github.com/Athul-Rajagopal/social-networking-API.git
-cd social-networking-API/social-network
+cd social-networking-API/social_network
 ````
 
 ### Configure Environment Variables
