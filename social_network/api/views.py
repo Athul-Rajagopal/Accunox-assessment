@@ -10,6 +10,8 @@ from django.db.models import Q
 from django.core.exceptions import ValidationError
 from django.utils import timezone
 from rest_framework.pagination import PageNumberPagination
+import time
+from django.core.cache import cache
 
 
 
@@ -63,6 +65,17 @@ class SendFriendRequestView(generics.CreateAPIView):
     def perform_create(self, serializer):
         
         to_user = User.objects.get(id=self.request.data['to_user'])
+        
+        # Rate limiting logic
+        cache_key = f'friend_request_{self.request.user.id}'
+        
+        if cache.get(cache_key):
+            request_count = cache.incr(cache_key)
+            if request_count > 3:
+                raise ValidationError("You have exceeded the limit of 3 friend requests per minute.")
+        else:
+            cache.set(cache_key, 1, timeout=60)
+        
         if self.request.user == to_user:
             raise ValidationError("You cannot send a friend request to yourself.")
         
