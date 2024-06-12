@@ -197,7 +197,9 @@ Here are some of the main API endpoints available in this project:
 
 ## Postman Collection
 
-You can import the provided Postman collection to test the API endpoints. The collection includes examples for all endpoints. You can download it from here.
+You can import the provided Postman collection to test the API endpoints. The collection includes examples for all endpoints. You can download it from [here](https://www.postman.com/athulrajagopal/workspace/accunox/collection/27782030-26f06caa-9e12-4ff4-9d0a-696645e8d1e2?action=share&creator=27782030)
+
+.
 
 
 
