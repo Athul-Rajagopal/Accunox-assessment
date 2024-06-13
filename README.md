@@ -149,9 +149,7 @@ Here are some of the main API endpoints available in this project:
     "username": "<username>",
     "email": "<user email>"
   },
-  "to_user": {
-    "id": <user_id>
-  },
+  "to_user": <user_id>,
   "status": "accepted"
 }
 ```
@@ -167,9 +165,7 @@ Here are some of the main API endpoints available in this project:
     "username": "<username>",
     "email": "<user email>"
   },
-  "to_user": {
-    "id": <user_id>
-  },
+  "to_user": <user_id>,
 "status": "rejected"
     }
 ```
